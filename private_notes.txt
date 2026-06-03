@@ -1,0 +1,71 @@
+git clone https://github.com/tgassner/TdSmartDxf.git
+cd TdSmartDxf
+python -m venv .venv
+
+Windows:
+.venv\Scripts\activate
+
+Linux:
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+
+Libs 4 future
+----
+shapely
+pydantic
+pyside6
+pytest
+
+
+polyline_utils.py
+is_closed_polyline()
+get_polyline_length()
+get_polyline_area()
+is_self_intersecting()
+contains_duplicate_vertices()
+
+
+GeometryService
+line_utils.py
+line_length(entity) -> float:
+arc_utils.py
+def arc_length(entity) -> float:
+polyline_utils.py
+
+def polyline_area(entity) -> float:
+    ...
+	
+
+Analyse Ausbaustufen
+
+Stufe 1
+Closed Polylines
+Open Polylines
+
+Stufe 2
+Geschlossene Konturen
+Offene Konturen
+Doppelte Segmente
+Null-Längen-Linien
+
+Stufe 3
+Laser-taugliche Konturen
+Fragwürdige Konturen
+Defekte Konturen
+
+
+Nicht nur die Anzahl der Duplikate zählen, sondern die erste Fundstelle speichern:
+
+Issue(
+    severity="WARNING",
+    message="Doppelte Linie gefunden"
+)
+
+
+duplicate erkennung:
+ARC
+LWPOLYLINE
+SPLINE
+ELLIPSE
