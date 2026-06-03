@@ -18,6 +18,14 @@ pydantic
 pyside6
 pytest
 
+ezdxf>=1.4,<2.0
+shapely>=2.0,<3.0
+pydantic>=2.0,<3.0
+
+pip show ezdxf
+pip list
+
+
 
 polyline_utils.py
 is_closed_polyline()
